@@ -1,4 +1,4 @@
-var express = require("C:\\Users\\NguyenXuanBinh\\AppData\\Roaming\\npm\\node_modules\\express");
+var express = require('express');
 var path = require('path');
 var app = express();
 
