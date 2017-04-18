@@ -1,2 +1,2 @@
 # 1412050_LT_T7
-No caption
+Bài tập lí thuyết tuần 7 - môn Đồ họa ứng dụng.
