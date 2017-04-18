@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>1412050_LT_T7</title>
+</head>
+<body>
+    <!--Import Video and create Canvas-->
+    <video width="640" height="360" id="myVideo" src="video.mp4" type="video/mp4" controls></video>
+    <canvas width="640" height="360" id="myCanvas"></canvas>
+
+    <!--Script: PROCESSING-->
+    <script type="text/javascript">
+        // Init data
+        var mVideo = document.getElementById("myVideo");
+        var mCanvas = document.getElementById("myCanvas");
+        var videoCtx = null;
+        var interval = null;
+
+        // Event Listener
+        mVideo.addEventListener('canplay',function() {
+            // Fps = 24
+            interval = setInterval(function() { doVideoCanvas(); }, 1000/24);
+        });
+        
+        mVideo.addEventListener('loadeddata',function() {
+            // get Data
+            videoCtx = mCanvas.getContext('2d');
+            // Apply filter Gaussian blur.
+            videoCtx.filter = 'blur(5px)';
+        });
+        
+        // DrawImage inside Canvas
+        function doVideoCanvas() {
+            videoCtx.drawImage(mVideo,0,0,640,360);
+        }
+
+    </script>
+</body>
+</html>
